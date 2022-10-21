@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Clothes {
-    int ClothesStatus;
-    String Body, Pants, Shoes;
+    private int ClothesStatus;
+    private String Body, Pants, Shoes;
 
     Clothes() {
         this.ClothesStatus = 0;
@@ -16,7 +16,7 @@ public class Clothes {
         this.Pants = pants;
         this.Shoes = shoes;
     }
-    void Read() {
+    public void Read() {
         int status;
         String strbody, strpants, strshoes;
         Scanner inp = new Scanner(System.in);
@@ -34,13 +34,13 @@ public class Clothes {
         this.Pants = strpants;
         this.Shoes = strshoes;
     }
-    void Display() {
+    public void Display() {
         System.out.println("Верхняя одежда: " + Body);
         System.out.println("Штаны: " + Pants);
         System.out.println("Обувь: " + Shoes);
         System.out.println("Состояние одежды (в %): " + ClothesStatus);
     }
-    void TearClothes(){
+    public void TearClothes(){
         if (this.ClothesStatus > 0) {
             System.out.println("Ваша одежда порвалась!");
             this.ClothesStatus -= 15;
@@ -48,7 +48,7 @@ public class Clothes {
                 this.ClothesStatus = 0;
         }
     }
-    void SewUpClothes() {
+    public void SewUpClothes() {
         if (this.ClothesStatus >= 0) {
             System.out.println("Вы зашили вашу одежду!");
             this.ClothesStatus += 20;

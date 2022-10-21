@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Human
 {
-    int Age;
-    long MoneyBalance;
-    String Name, Sex;
-    Clothes clothes;
+    private int Age;
+    public long MoneyBalance;
+    private String Name, Sex;
+    private Clothes clothes;
 
     Human() {
         this.Age = 0;
@@ -21,7 +21,7 @@ public class Human
         this.MoneyBalance = 1000;
         this.clothes = clothes;
     }
-    void Read() {
+    public void Read() {
         String strname, strsex;
         int age;
         Scanner inp = new Scanner(System.in);
@@ -36,15 +36,22 @@ public class Human
         this.Name = strname;
         this.Sex = strsex;
         this.MoneyBalance = 1000;
-        clothes = new Clothes();
-        clothes.Read();
-        this.clothes = clothes;
+        this.clothes.Read();
     }
-    void Display() {
+    public void Display() {
         System.out.println("Имя: " + Name);
         System.out.println("Пол: " + Sex);
         System.out.println("Возраст: " + Age);
         System.out.println("Баланс денег: " + MoneyBalance);
         clothes.Display();
+    }
+
+    void NameBalanceDisplay() {
+        System.out.println("Имя: " + Name);
+        System.out.println("Баланс денег: " + MoneyBalance);
+    }
+
+    String NameDisplay() {
+        return Name;
     }
 }

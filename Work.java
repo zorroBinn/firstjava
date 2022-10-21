@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class Work {
-    Human human;
-    int Payment;
-    String Namework;
+    private Human human;
+    private int Payment;
+    private String Namework;
 
     Work() {
         this.human = new Human();
@@ -15,7 +15,7 @@ public class Work {
         this.Namework = namework;
         this.Payment = payment;
     }
-    void Read(Human human) {
+    public void Read(Human human) {
         int payment;
         String strnamework;
         Scanner inp = new Scanner(System.in);
@@ -27,11 +27,12 @@ public class Work {
         this.Namework = strnamework;
         this.Payment = payment;
     }
-    void Display() {
-        System.out.println("Место работы: " + Namework);
+    public void Display() {
+        System.out.println("Имя работника: " + human.NameDisplay());
+        System.out.println("Место его работы: " + Namework);
         System.out.println("Оплата за работу: " + Payment);
     }
-    void Working(Human human) {
+    public void Working(Human human) {
         System.out.println("За свою работу вы получили " + Payment + "р!");
         human.MoneyBalance += Payment;
     }

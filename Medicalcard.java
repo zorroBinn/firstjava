@@ -2,9 +2,9 @@ import java.util.Scanner;
 
 public class MedicalCard
 {
-    Human human;
-    String HealthStatus;
-    int Weight, Height;
+    private Human human;
+    private String HealthStatus;
+    private int Weight, Height;
 
     MedicalCard() {
         this.human = new Human();
@@ -17,7 +17,7 @@ public class MedicalCard
         this.HealthStatus = status;
         this.human = human;
     }
-    void Read(Human human) {
+    public void Read(Human human) {
         String status;
         int height, weight;
         Scanner inp = new Scanner(System.in);
@@ -32,13 +32,13 @@ public class MedicalCard
         this.HealthStatus = status;
         this.human = human;
     }
-    void Display() {
-        System.out.println("Имя пациента: " + human.Name);
+    public void Display() {
+        System.out.println("Имя пациента: " + human.NameDisplay());
         System.out.println("Вес (в кг): " + Weight);
         System.out.println("Рост (в см): " + Height);
         System.out.println("Состояние здоровья: " + HealthStatus);
     }
-    void BodyMassIndex() {
+    public void BodyMassIndex() {
         double Index, weight, height;
         if (Height > 0 && Weight > 0) {
             weight = Weight;
@@ -52,7 +52,7 @@ public class MedicalCard
                 System.out.println("Избыточный вес, ИМТ = " + Index);
         }
     }
-    void SetHealthStatus() {
+    public void SetHealthStatus() {
         String status;
         Scanner inp = new Scanner(System.in);
         System.out.println("Текущее состояние здоровья: " + HealthStatus);
